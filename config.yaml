@@ -1,0 +1,35 @@
+yolo:
+  model_type: yolov11                # YOLO 模型类型，例如 yolov5, yolov8 等
+  model_path:  weight/yolo/yolo11n.pt   # YOLO 模型权重路径
+  input_size: 640                   # YOLO 输入大小 (可用于调整输入分辨率)
+  confidence_threshold: 0.5         # 检测置信度阈值
+  iou_threshold: 0.5                #iou 阈值
+
+
+slowfast:
+  model_type: slowfast_r50          # SlowFast 模型类型 (例如 slowfast_r50, x3d)
+#  model_cfg: slowfast/demo/AVA/MY_AVA_DEMO.yaml  # SlowFast 模型权重路径
+  alpha: 4
+
+
+deepsort:
+  deepsort_use : False
+  model_path: weight/deepsort/ckpt.t7  # DeepSORT ReID 模型文件路径
+
+
+
+video:
+  # input: demo/input/demo.mp4   # 输入视频文件路径 (或 0 表示摄像头)
+  # output: demo/output/clip1.mp4  # 输出视频文件路径
+  # input: 1
+  # output: 
+  fps: 32                           # 视频帧率
+  codec: mp4v                       # 视频编码 (例如 XVID, MJPG 等)
+
+
+labels:
+  file: label/temp.pbtxt          # 类别标签文件路径，每行一个标签
+
+device: cuda
+PERSON_CLASS_ID: 0
+imsize: 640
